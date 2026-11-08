@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<!-- data-bs-theme="dark": my site is dark only (Tokyo Night). This also makes Bootstrap's
+     form controls, select arrow and modal close button light on dark. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Borna Najafian: IT diploma student in Sydney, NSW with hands-on IT support and Linux home server experience.">
+  <meta name="author" content="Borna Najafian">
+  <meta name="theme-color" content="#1a1b26">
+  <title>Borna Najafian | About</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <!-- Fonts: JetBrains Mono 700 for headings and the navbar brand, IBM Plex Sans 400 and 600 for body text. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- I load my stylesheet last so my Tokyo Night inspired colours and fonts override Bootstrap's -->
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Navbar: surface background, with the brand and active page in primary (colours are in css/custom.css).
+     I removed the template's light/dark switch because my site is dark only. -->
+<nav class="navbar navbar-expand-lg sticky-top portfolio-nav" aria-label="Main portfolio navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/profile-placeholder.svg" alt="" class="brand-avatar">
+      <span><span class="brand-hl">Bor</span>na <span class="brand-hl">Naja</span>fian</span>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="maincontent" class="container my-5">
+  <header class="section-panel mb-5">
+    <h1>About Borna</h1>
+    <p class="lead">IT diploma student moving into a Bachelor of ICT in 2027, with hands-on experience supporting a small business and running my own Linux home server.</p>
+  </header>
+
+  <div class="row g-5 align-items-start">
+    <aside class="col-lg-4">
+      <div class="section-panel position-sticky" style="top:6rem;">
+        <img src="images/profile-placeholder.svg" class="img-fluid rounded-4 mb-3" alt="BorNaja logo">
+        <h2>Quick facts</h2>
+        <p class="mb-2"><strong>Location:</strong> Sydney, NSW</p>
+        <p class="mb-0"><strong>Looking for:</strong> part-time, entry-level IT support or service desk work.</p>
+      </div>
+    </aside>
+
+    <section class="col-lg-8">
+      <div class="feature-card p-4 mb-4">
+        <h2>What I'm looking for</h2>
+        <p>I'm looking for a part-time, entry-level IT support or service desk role while I finish my diploma and move into the Bachelor of ICT.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <article class="feature-card p-4">
+            <h2 class="h3">What I do</h2>
+            <ul>
+              <li>IT support for a small family business (Integrity Deco Pty Ltd)</li>
+              <li>Running and maintaining my own Linux home server</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="feature-card p-4">
+            <h2 class="h3">Interests</h2>
+            <ul>
+              <li>Linux and home server</li>
+              <li>Gaming</li>
+              <li>Philosophy</li>
+              <li>Music</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Footer: surface background with muted text. My social links are icons only (Bootstrap Icons),
+     so each one has an aria-label. -->
+<footer class="site-footer py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    <p class="mb-0">&copy; 2026 Borna Najafian</p>
+    <ul class="social-links list-unstyled d-flex gap-2 mb-0">
+      <li><a href="mailto:borna@fakemail.com" aria-label="Email Borna Najafian"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/BorNaja" target="_blank" rel="noopener" aria-label="Borna Najafian on GitHub (opens in a new tab)"><i class="bi bi-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.youtube.com/@eyetestman1" target="_blank" rel="noopener" aria-label="Borna Najafian on YouTube (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i></a></li>
+    </ul>
+    <p class="mb-0"><a href="pdf/borna-najafian-resume.pdf" target="_blank" rel="noopener">Download résumé (PDF)</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected IT and Linux projects by Borna Najafian, with an image lightbox for each project.">
+  <meta name="author" content="Borna Najafian">
+  <meta name="theme-color" content="#1a1b26">
+  <title>Borna Najafian | Portfolio</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <!-- Fonts: JetBrains Mono 700 for headings and the navbar brand, IBM Plex Sans 400 and 600 for body text.
+       I load both with one Google Fonts link before my stylesheet. They replace Oswald and Montserrat. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- I load my stylesheet last so my Tokyo Night colours and fonts override Bootstrap's -->
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Navbar: surface background, with the brand and active page in primary (colours are in css/custom.css).
+     I removed the template's light/dark switch because my site is dark only. -->
+<nav class="navbar navbar-expand-lg sticky-top portfolio-nav" aria-label="Main portfolio navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <!-- My BorNaja logo. The alt is empty because my name is right next to it. -->
+      <img src="images/profile-placeholder.svg" alt="" class="brand-avatar">
+      <span><span class="brand-hl">Bor</span>na <span class="brand-hl">Naja</span>fian</span>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+        <li class="nav-item"><a class="nav-link active" href="portfolio.html" aria-current="page">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="maincontent" class="container my-5">
+  <header class="section-panel mb-5">
+    <h1>Portfolio</h1>
+    <p class="lead">Selected projects. Select a project to open a larger preview.</p>
+  </header>
+
+  <!-- Project grid: my IT work goes first because it's most relevant to the jobs I'm after, and my uni photography goes last -->
+  <section class="row g-4" aria-label="Portfolio project gallery">
+    <!-- Home server: I cropped my local IP out of the screenshot -->
+    <div class="col-md-6 col-lg-4">
+      <article class="project-card">
+        <button type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#projectLightbox"
+                data-project-title="Linux home server"
+                data-project-image="images/linux-home-server.webp"
+                data-project-alt="Terminal showing system information for a Debian 13 home server: a ThinkCentre M900 with an Intel Core i5-6500T, 15.5 GiB of memory and two ext4 disks"
+                data-project-text="My own home server, running Debian 13 on a ThinkCentre M900. It hosts Navidrome for music streaming, a website, cloud storage, a VPN and ad blocking.">
+          <!-- thumb-top keeps the top of the screenshot visible when the thumbnail is cropped -->
+          <img src="images/linux-home-server.webp" class="project-thumb thumb-top" alt="Terminal showing system information for a Debian 13 home server: a ThinkCentre M900 with an Intel Core i5-6500T, 15.5 GiB of memory and two ext4 disks">
+        </button>
+        <div class="p-4">
+          <h2>Linux home server</h2>
+          <p>My own home server, running Debian 13 on a ThinkCentre M900. It hosts Navidrome for music streaming, a website, cloud storage, a VPN and ad blocking.</p>
+        </div>
+      </article>
+    </div>
+    <!-- Networking labs -->
+    <div class="col-md-6 col-lg-4">
+      <article class="project-card">
+        <button type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#projectLightbox"
+                data-project-title="Networking labs (Cisco Packet Tracer)"
+                data-project-image="images/computer-icon.svg"
+                data-project-alt="Computer icon"
+                data-project-text="Lab work from my Networking and Cyber Security subject: TCP/IP, IPv4 subnetting and VLSM, VLANs and Cisco IOS basics, built and tested in Packet Tracer. I performed well in both the labs and the subnetting exam.">
+          <img src="images/computer-icon.svg" class="project-thumb" alt="Computer icon">
+        </button>
+        <div class="p-4">
+          <h2>Networking labs (Cisco Packet Tracer)</h2>
+          <p>Lab work from my Networking and Cyber Security subject: TCP/IP, IPv4 subnetting and VLSM, VLANs and Cisco IOS basics, built and tested in Packet Tracer. I performed well in both the labs and the subnetting exam.</p>
+        </div>
+      </article>
+    </div>
+    <!-- Linux videos -->
+    <div class="col-md-6 col-lg-4">
+      <article class="project-card">
+        <button type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#projectLightbox"
+                data-project-title="Linux videos on YouTube"
+                data-project-image="images/youtube-icon.svg"
+                data-project-alt="YouTube logo"
+                data-project-text="I make Linux videos on my YouTube channel, explaining setups and fixes in plain language.">
+          <img src="images/youtube-icon.svg" class="project-thumb" alt="YouTube logo">
+        </button>
+        <div class="p-4">
+          <h2>Linux videos on YouTube</h2>
+          <p>I make Linux videos on my YouTube channel, explaining setups and fixes in plain language.</p>
+          <a class="btn-portfolio btn-ghost" href="https://www.youtube.com/@eyetestman1" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </article>
+    </div>
+    <!-- Photography: my image portfolio for DESN1023. data-project-gallery lists the seven photos
+         that show as a thumbnail strip in the lightbox (see js/script.js).
+         My internal names for them, in display order (not shown on the page):
+         poster, bridge, walkway, bench, windows, flower, tracks.
+         Their names on the page, same order: My Daily Commute, Arriving At UTS, Class Time, Watching The City Go By,
+         Out And About, Like An Ant, Heading Home. In data-project-gallery, "title" is the name and "caption" is the text under the photo.
+         To reorder them, I move the entries in data-project-gallery. The first one opens the lightbox,
+         so I also need to update data-project-image and the card thumbnail to match. -->
+    <div class="col-md-6 col-lg-4">
+      <article class="project-card">
+        <button type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#projectLightbox"
+                data-project-title="Photography portfolio (DESN1023)"
+                data-project-image="images/desn1023-poster.webp"
+                data-project-alt="A paper poster titled My Daily Commute pinned on a black wall covered in graffiti tags"
+                data-project-text=""
+                data-project-gallery="[{&quot;src&quot;:&quot;images/desn1023-poster.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-poster-thumb.webp&quot;,&quot;title&quot;:&quot;My Daily Commute&quot;,&quot;caption&quot;:&quot;The poster works as a frame within a frame, standing out against the messy graffiti and introducing the series' theme. I kept it in colour this time, since feedback said the poster blended into the wall in black and white. The blues and greens now pop against the grey tags. I also lifted the contrast to sharpen the line work, and cropped the bottom to cut back the heavy white tags.&quot;,&quot;alt&quot;:&quot;A paper poster titled My Daily Commute pinned on a black wall covered in graffiti tags&quot;},{&quot;src&quot;:&quot;images/desn1023-bridge.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-bridge-thumb.webp&quot;,&quot;title&quot;:&quot;Arriving At UTS&quot;,&quot;caption&quot;:&quot;For this shot I focused on the walkway, which made the handrails symmetric and allowed them to serve as leading lines pointing to the two commuters at the vanishing point. In the spirit of Cartier-Bresson, I arranged the composition and then waited for people to finish filling it in. The low angle gives the bridge the appearance of being longer. In Lightroom I increased the exposure and gave the image a warmer tone because the feedback had said the original was too dark.&quot;,&quot;alt&quot;:&quot;Low-angle view along a glass-railed footbridge between office buildings, with two people walking towards the camera&quot;},{&quot;src&quot;:&quot;images/desn1023-walkway.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-walkway-thumb.webp&quot;,&quot;title&quot;:&quot;Class Time&quot;,&quot;caption&quot;:&quot;The railings are positioned diagonally throughout the frame, directing the viewer's attention to the illuminated doorway and the orange UTS sign, this latter serving as a second area of focus. It is the man who is standing at the point where the brick meets the glass that provides the deciding image and gives the scene its vitality. The photograph was taken around 5 to 6 pm, at which time the warm lights inside contrast with the grey concrete. I adjusted the image to a 16:9 aspect ratio, increased the exposure so that the man stands out more, and applied a warm, subdued tone.&quot;,&quot;alt&quot;:&quot;A white mesh-railed walkway beside a brown brick wall, leading to a doorway with an orange building sign and a person in the distance&quot;},{&quot;src&quot;:&quot;images/desn1023-bench.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-bench-thumb.webp&quot;,&quot;title&quot;:&quot;Watching The City Go By&quot;,&quot;caption&quot;:&quot;To create a shallow depth of field, I blurred the city into soft bokeh so that the man on the bench comes into focus. Since he is facing away, the viewer can imagine themselves in his position. The slats of the bench form a solid base at the bottom of the picture and guide the eye towards him. The idea for this came from Trent Parke's work on lone commuters, and it includes the human element that my initial draft had lacked.&quot;,&quot;alt&quot;:&quot;A person seen from behind sitting on a wooden park bench, with a softly blurred, lit plaza behind them&quot;},{&quot;src&quot;:&quot;images/desn1023-windows.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-windows-thumb.webp&quot;,&quot;title&quot;:&quot;Out And About&quot;,&quot;caption&quot;:&quot;The window frames divide the scene into a natural grid according to the rule of thirds, while the colours ranging from red to yellow draw the viewer's eye from left to right. Because the photograph was taken in the midday sun with the camera pointed straight ahead, sharp shadows are produced which give the flat wall a sense of depth. I changed the picture to 16:9, increased the saturation and contrast, and employed the healing tool to get rid of the graffiti, as the feedback had said it looked dirty.&quot;,&quot;alt&quot;:&quot;Three sash windows on a cream wall, with red, orange and yellow-green panels above frosted blue lower panes&quot;},{&quot;src&quot;:&quot;images/desn1023-flower.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-flower-thumb.webp&quot;,&quot;title&quot;:&quot;Like An Ant&quot;,&quot;caption&quot;:&quot;I took the photograph from a low worm's eye point of view, looking up at the flower against the dusk sky, using a shallow depth of field to blur the trees in the background. The flower is positioned in the right third and is balanced by the dark leaves on the left. I cropped the image to 16:9 so that the flower would appear larger and intensified the pink and purple shades since feedback had indicated that the original looked sad. As I wasn't able to take another shot, only the closest petal is in full focus.&quot;,&quot;alt&quot;:&quot;A white bauhinia flower silhouetted against a purple-to-pink dusk sky, with trees blurred on either side&quot;},{&quot;src&quot;:&quot;images/desn1023-tracks.webp&quot;,&quot;thumb&quot;:&quot;images/desn1023-tracks-thumb.webp&quot;,&quot;title&quot;:&quot;Heading Home&quot;,&quot;caption&quot;:&quot;The tram rails are arranged in one-point perspective, extending straight down the centre and acting as leading lines that draw the eye into the vanishing point in the distance, much like the journey home. The trees frame either side, and the small people, along with the glowing streetlights, add scale and bring the scene to life. I took the photograph at dusk and processed it in a cinematic style, using grain and a vignette, to end the series on a more sombre note, inspired by Trent Parke's dark streets in Sydney.&quot;,&quot;alt&quot;:&quot;Tram tracks running down a dim city street at dusk, lined with trees and glowing street lamps, with pedestrians in the distance&quot;}]">
+          <img src="images/desn1023-poster-thumb.webp" class="project-thumb" alt="A paper poster titled My Daily Commute pinned on a black wall covered in graffiti tags">
+        </button>
+        <div class="p-4">
+          <p class="project-label">Uni design project</p>
+          <h2>Photography portfolio (DESN1023)</h2>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="modal fade" id="projectLightbox" tabindex="-1" aria-labelledby="projectLightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-3" id="projectLightboxLabel">Project preview</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/project-placeholder.svg" class="lightbox-image" alt="Project preview image">
+          <!-- Thumbnail strip, filled by js/script.js for projects with more than one image -->
+          <div class="lightbox-thumbs"></div>
+          <!-- Photo name (added by js/script.js) and caption, for projects with more than one image -->
+          <p class="lightbox-photo-text mt-2 mb-0"></p>
+          <p class="lightbox-text mt-3 mb-0">Project description appears here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer: surface background with muted text. My social links are icons only (Bootstrap Icons),
+     so each one has an aria-label. -->
+<footer class="site-footer py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    <p class="mb-0">&copy; 2026 Borna Najafian</p>
+    <ul class="social-links list-unstyled d-flex gap-2 mb-0">
+      <li><a href="mailto:borna@fakemail.com" aria-label="Email Borna Najafian"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/BorNaja" target="_blank" rel="noopener" aria-label="Borna Najafian on GitHub (opens in a new tab)"><i class="bi bi-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.youtube.com/@eyetestman1" target="_blank" rel="noopener" aria-label="Borna Najafian on YouTube (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i></a></li>
+    </ul>
+    <p class="mb-0"><a href="pdf/borna-najafian-resume.pdf" target="_blank" rel="noopener">Download résumé (PDF)</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+/* ==========================================================================
+   My résumé and portfolio site (INFO1005 Assessment 3).
+   I adapted it from the Marge Simpson multipage Bootstrap template, and
+   changed the colour scheme, fonts and content.
+
+   I load this file after Bootstrap, so my rules override Bootstrap's defaults
+   without editing Bootstrap's own files.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Colour scheme, based on Tokyo Night
+   My colours all come from these variables (the old template colours are in
+   brackets). All my text and background pairs meet WCAG AA (4.5:1).
+   I don't use Tokyo Night's comment grey #565f89 for text because it fails contrast.
+   -------------------------------------------------------------------------- */
+:root {
+  --bg:      #1a1b26; /* page background (was #f8ffed / #151515) */
+  --surface: #24283b; /* navbar, cards, footer, form fields (was #fff / #202124) */
+  --text:    #c0caf5; /* main body text (was #333 / #f3f7e9) */
+  --muted:   #a9b1d6; /* secondary text: dates, captions, footer (was #666 / #cdd6bd) */
+  --primary: #7aa2f7; /* headings, links, active nav (was lime #c0f905 / green #82a510) */
+  --accent:  #ff9e64; /* buttons, calls to action and link hover. Text on it uses --bg (was pink #fb079a) */
+  --brand:   #bb9af7; /* just for my BorNaja highlight (Tokyo Night purple) */
+  --border:  #2f3549; /* card and input borders (was #dce9b9 / #44502f) */
+
+  /* RGB copies of --bg and --primary, so my overlays and glows can be
+     see-through with rgba(). If I change the colours above, I change these too. */
+  --bg-rgb: 26, 27, 38;
+  --primary-rgb: 122, 162, 247;
+
+  /* Fonts: JetBrains Mono (700) for headings and my brand, IBM Plex Sans (400, 600)
+     for body text. Every page loads them from Google Fonts in its <head>.
+     They replace Oswald and Montserrat. */
+  --font-heading: 'JetBrains Mono', monospace;
+  --font-body: 'IBM Plex Sans', sans-serif;
+}
+
+/* This points Bootstrap's theme variables at my colours. My site is dark only
+   (data-bs-theme="dark" on <html>), so Bootstrap's dark defaults for the modal
+   close button, select arrow and form controls apply too. */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-body-font-family: var(--font-body);
+  --bs-heading-color: var(--primary);
+  --bs-border-color: var(--border);
+  --bs-secondary-color: var(--muted);
+  --bs-emphasis-color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* I only use the weights I load: 400 and 600 for IBM Plex Sans, 700 for
+   JetBrains Mono. This stops the browser faking other weights. */
+strong, b, .fw-bold { font-weight: 600 !important; }
+.lead { font-weight: 400; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--surface);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: .75rem 1rem;
+  z-index: 2000;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+/* --------------------------------------------------------------------------
+   2. Typography and links
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere; /* stops long monospace words overflowing on phones */
+}
+
+h2 { color: var(--primary); font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+h3 { color: var(--primary); font-size: 1.3rem; }  /* was pink in the template */
+h4 { color: var(--muted); font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Links are primary, and turn accent on hover and keyboard focus */
+a { color: var(--primary); }
+a:hover,
+a:focus { color: var(--accent); }
+
+/* A visible keyboard focus ring on everything you can tab to */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navigation (surface background, active page in primary)
+   Bootstrap sets nav colours with --bs-navbar-* variables, so I override
+   those here instead of using !important.
+   -------------------------------------------------------------------------- */
+.portfolio-nav {
+  --bs-navbar-color: var(--text);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--primary);
+  --bs-navbar-brand-color: var(--primary);
+  --bs-navbar-brand-hover-color: var(--accent);
+  background: var(--surface);
+  border-bottom: 4px solid var(--primary);
+}
+
+/* BorNaja is my brand, so "Bor" and "Naja" in my name are highlighted in purple
+   (7.39:1 on --bg, 6.3:1 on --surface). I only use this colour for the brand.
+   On hover my whole name turns accent, so the highlight swaps to primary to stay visible. */
+.brand-hl { color: var(--brand); }
+.navbar-brand:hover .brand-hl,
+.navbar-brand:focus .brand-hl { color: var(--primary); }
+
+.brand-avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+}
+
+.nav-link {
+  font-weight: 600;
+  padding-inline: .85rem !important;
+}
+
+/* The active page gets a colour and an underline, so it isn't shown by colour alone */
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: .4em;
+  text-decoration-thickness: 2px;
+}
+
+/* Bootstrap's default toggler icon is dark and disappears on my dark navbar,
+   so I redraw it in my --text colour (#c0caf5 = %23c0caf5). */
+.navbar-toggler { border: 2px solid var(--primary); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c0caf5' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --------------------------------------------------------------------------
+   4. Home hero
+   The background is a dark grid image under a see-through --bg overlay, so my
+   text colours keep their contrast.
+   -------------------------------------------------------------------------- */
+.hero {
+  min-height: 70vh;
+  padding-block: 4rem;
+  background:
+    linear-gradient(90deg, rgba(var(--bg-rgb), .96), rgba(var(--bg-rgb), .80)),
+    url('../images/pattern-bg.svg') center/cover no-repeat;
+}
+
+.hero-img {
+  max-width: 340px;
+  border-radius: 2rem;
+  border: 10px solid var(--primary);
+  box-shadow: 16px 16px 0 var(--border); /* was pink in the template */
+}
+
+.standout {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.typing-heading {
+  min-height: 3.6rem;
+  margin-bottom: 1rem;
+}
+
+.typewrite {
+  color: var(--primary);
+  border-right: .08em solid var(--primary);
+  padding-right: .1em;
+  animation: blinkCursor .8s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* No typing cursor for people who have reduced motion turned on */
+@media (prefers-reduced-motion: reduce) {
+  .typewrite {
+    animation: none;
+    border-right: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Panels and cards (surface background, --border outline)
+   -------------------------------------------------------------------------- */
+.section-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.feature-card,
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  height: 100%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.feature-card:hover,
+.project-card:hover {
+  transform: translateY(-.25rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .35);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--primary); /* was pink in the template */
+}
+
+.project-thumb {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-thumb { cursor: zoom-in; }
+.thumb-top { object-position: top; } /* crops from the bottom, for terminal screenshots */
+/* Small label that marks my uni work apart from my IT projects */
+.project-label {
+  margin-bottom: .25rem;
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.project-card button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons, the only place I use the accent colour as a fill.
+   They have dark --bg text on --accent for contrast.
+   -------------------------------------------------------------------------- */
+.btn-portfolio {
+  display: inline-block;
+  color: var(--bg);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  font-weight: 600;
+  padding: .85rem 1.2rem;
+  text-decoration: none;
+}
+
+/* Hover and focus flip it: dark fill with accent text and border */
+.btn-portfolio:hover,
+.btn-portfolio:focus {
+  color: var(--accent);
+  background: var(--bg);
+  border-color: var(--accent);
+}
+
+/* Ghost button for the second action, like View resume: see-through with accent
+   text and border. Hover and focus fill it, the reverse of the solid button. */
+.btn-ghost {
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+/* Bootstrap's .btn:focus-visible removes the outline, so I put it back */
+.btn-portfolio:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Resume page
+   -------------------------------------------------------------------------- */
+.timeline-item {
+  border-left: 5px solid var(--primary);
+  padding-left: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.pdf-frame {
+  width: 100%;
+  min-height: 520px;
+  border: 4px solid var(--border);
+  border-radius: 1rem;
+}
+
+.optional-note {
+  border-left: 6px solid var(--primary);
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: .75rem;
+}
+
+/* Skills section
+   One card per skill category, with a heading and a short list. */
+.skills-section {
+  margin-top: 2.5rem;
+}
+
+.skills-section > h2 {
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.4rem;
+}
+
+.skill-card h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+@media (max-width: 575.98px) {
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Responsive parallax banner
+   A fixed grid image under a see-through --bg overlay. */
+.resume-parallax {
+  min-height: 390px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(var(--bg-rgb), .55), rgba(var(--bg-rgb), .70)),
+    url('../images/pattern-bg.svg') center/cover fixed no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.parallax-content {
+  padding: 4rem 1rem;
+}
+
+.resume-parallax h2 {
+  text-shadow: 0 2px 10px rgba(var(--bg-rgb), .9);
+}
+
+/* --------------------------------------------------------------------------
+   8. Modal
+   -------------------------------------------------------------------------- */
+.modal-content {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.modal-header { border-bottom-color: var(--border); }
+
+.lightbox-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: .75rem;
+}
+
+/* Thumbnail strip for projects with more than one image (the active photo gets a primary border) */
+.lightbox-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.lightbox-caption:empty,
+.lightbox-photo-text:empty,
+.lightbox-text:empty { display: none; }
+
+.lightbox-photo-text { max-width: 70ch; } /* keeps long captions readable */
+
+.lightbox-thumbs:empty { display: none; }
+
+.lightbox-thumb {
+  padding: 0;
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: .5rem;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.lightbox-thumb.active { border-color: var(--primary); }
+
+.lightbox-thumb img {
+  width: 96px;
+  height: 56px;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   9. Form and map
+   Fields have a --surface background, --text text, --border border and
+   --muted placeholder.
+   -------------------------------------------------------------------------- */
+.form-control,
+.form-select {
+  border: 2px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.form-control::placeholder { color: var(--muted); opacity: 1; }
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 .25rem rgba(var(--primary-rgb), .30);
+}
+
+.map-frame {
+  overflow: hidden;
+  border: 4px solid var(--primary);
+  border-radius: 1rem;
+}
+
+.map-frame iframe {
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Footer (surface background, muted text, primary links)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--surface);
+  color: var(--muted);
+  border-top: 4px solid var(--primary);
+}
+
+.site-footer p { color: var(--muted); }
+.site-footer a { color: var(--primary); }
+.site-footer a:hover,
+.site-footer a:focus { color: var(--accent); }
+
+/* My icon-only social links (Bootstrap Icons) in the footer */
+.social-links a {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: .25rem;
+}
+
+@media (max-width: 767.98px), (prefers-reduced-motion: reduce) {
+  .resume-parallax {
+    min-height: 240px;
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: auto;
+    padding-block: 2rem;
+  }
+
+  .hero-img {
+    max-width: 240px;
+    border-width: 6px;
+    box-shadow: 8px 8px 0 var(--border);
+  }
+
+  .section-panel {
+    padding: 1rem;
+  }
+
+  .project-thumb {
+    height: 180px;
+  }
+}

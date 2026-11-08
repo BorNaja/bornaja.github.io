@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-label="Computer icon">
+  <!-- Networking labs thumbnail: Nerd Font computer glyph (nf-fa-desktop, U+F108), converted to a path so visitors do not need the font installed -->
+  <rect width="800" height="440" fill="#1a1b26"/>
+  <path transform="translate(301.00 287.39) scale(0.19820 -0.19820)" fill="#7aa2f7" d="M111 784H888Q934 784 967 752Q999 720 999 674V174Q999 128 967.0 95.0Q935 62 888 62H583L602 6H722Q745 6 761.0 -10.0Q777 -26 778 -48Q778 -72 761 -88Q745 -104 722 -104H277Q254 -104 238.0 -88.0Q222 -72 222 -48Q222 -26 238.0 -10.0Q254 6 277 6H397L417 62H111Q65 62 32 94Q0 128 0 174V674Q0 720 32 752Q65 784 111 784ZM888 674H111V284H888Z"/>
+</svg>

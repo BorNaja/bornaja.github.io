@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="BorNaja logo">
+  <!-- BorNaja brand tile, stacked so it stays readable at small sizes. TODO: replace with a real photo where a portrait is wanted. Colours are the Tokyo Night palette. -->
+  <rect width="400" height="400" fill="#24283b"/>
+  <text x="200" y="185" text-anchor="middle" font-family="monospace" font-weight="700" font-size="124" fill="#bb9af7">Bor</text>
+  <text x="200" y="300" text-anchor="middle" font-family="monospace" font-weight="700" font-size="124" fill="#7aa2f7">Naja</text>
+</svg>

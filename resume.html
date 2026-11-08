@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Résumé of Borna Najafian: Diploma of Information Technology, IT support experience and downloadable PDF.">
+  <meta name="author" content="Borna Najafian">
+  <meta name="theme-color" content="#1a1b26">
+  <title>Borna Najafian | Resume</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <!-- Fonts: JetBrains Mono 700 for headings and the navbar brand, IBM Plex Sans 400 and 600 for body text.
+       I load both with one Google Fonts link before my stylesheet. They replace Oswald and Montserrat. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- I load my stylesheet last so my Tokyo Night colours and fonts override Bootstrap's -->
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Navbar: surface background, with the brand and active page in primary (colours are in css/custom.css).
+     I removed the template's light/dark switch because my site is dark only. -->
+<nav class="navbar navbar-expand-lg sticky-top portfolio-nav" aria-label="Main portfolio navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <!-- My BorNaja logo. The alt is empty because my name is right next to it. -->
+      <img src="images/profile-placeholder.svg" alt="" class="brand-avatar">
+      <span><span class="brand-hl">Bor</span>na <span class="brand-hl">Naja</span>fian</span>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="resume.html" aria-current="page">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="maincontent" class="container my-5">
+  <div class="row g-5">
+    <aside class="col-lg-4">
+      <div class="section-panel position-sticky" style="top:6rem;">
+        <img src="images/profile-placeholder.svg" class="img-fluid rounded-4 mb-3" alt="BorNaja logo">
+        <h1 class="fs-1">Resume</h1>
+        <p>Education, work experience, skills and my downloadable résumé.</p>
+        <a class="btn-portfolio" href="pdf/borna-najafian-resume.pdf" target="_blank" rel="noopener">Open PDF resume</a>
+        <div class="optional-note mt-4 d-none d-lg-block">
+          <strong>Based in:</strong> Sydney, NSW<br>
+          <strong>Portfolio:</strong> <a href="https://bornaja.xyz">bornaja.xyz</a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="col-lg-8">
+      <h2>Education</h2>
+      <div class="timeline-item">
+        <h3>Diploma of Information Technology</h3>
+        <h4>Western Sydney University The College &middot; completing 2026</h4>
+        <p>Pathway into the Bachelor of ICT (2027).</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Diploma of Nursing (incomplete)</h3>
+        <h4>TAFE NSW &middot; 2023</h4>
+        <p>Learned people skills and the importance of tender love and care, and found a genuine passion for helping people, which has helped me in IT.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Higher School Certificate (completed)</h3>
+        <h4>Parramatta High School &middot; 2017 &ndash; 2022</h4>
+      </div>
+
+      <h2>Professional Experience</h2>
+      <div class="timeline-item">
+        <h3>IT Support (family business)</h3>
+        <h4>Integrity Deco Pty Ltd, Greystanes NSW &middot; painting and decorating &middot; 2023 &ndash; Present</h4>
+        <!-- These duties match the bullets in my PDF resume, so if I change one I need to change the other -->
+        <ul>
+          <li>Set up and maintain a Linux Mint Debian Edition workstation for day-to-day business use.</li>
+          <li>Built a file server at the family home to store and share business documents.</li>
+          <li>Configured the printer and scanner, and wrote a script that automates document scanning.</li>
+          <li>Provide ongoing troubleshooting for hardware, software and connectivity issues.</li>
+          <li>Prepare invoices and job paperwork for the business's main client each week.</li>
+          <li>Contact clients and trade platforms by email on behalf of the business.</li>
+        </ul>
+      </div>
+
+      <section class="skills-section" aria-labelledby="skillsHeading">
+        <h2 id="skillsHeading">Skills</h2>
+        <!-- My skills, grouped by category with one card each. These replace the template's percentage bars. -->
+        <div class="skills-list">
+          <article class="skill-card">
+            <h3>Support</h3>
+            <p class="mb-0">Hardware and software troubleshooting, printer and scanner setup, user support, documentation</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Operating systems</h3>
+            <p class="mb-0">Linux (Debian, Mint, Fedora, NixOS, Void), Windows (advanced troubleshooting), macOS</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Networking</h3>
+            <p class="mb-0">TCP/IP, IPv4 subnetting and VLSM, VLANs, Cisco IOS basics, Packet Tracer</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Services and tools</h3>
+            <p class="mb-0">Docker, Caddy, SSH, Tailscale, Cloudflare DNS, Git, cron</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Web</h3>
+            <p class="mb-0">HTML, CSS, Bootstrap</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Communication</h3>
+            <p class="mb-0">Client and trade-platform email, explaining technical issues in plain language, Linux video tutorials</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <!-- Parallax banner: the fixed grid background (images/pattern-bg.svg) is set in css/custom.css -->
+  <section class="resume-parallax mt-5" aria-label="Focus areas banner">
+    <div class="parallax-content container text-center">
+      <p class="standout text-uppercase fw-bold">Focus areas</p>
+      <h2>IT Support &middot; Linux Systems &middot; Service Desk</h2>
+    </div>
+  </section>
+
+  <!-- PDF preview: shows my downloadable resume on large screens -->
+  <section class="d-none d-lg-block mt-5" aria-labelledby="pdfPreview">
+    <h2 id="pdfPreview">PDF preview</h2>
+    <object class="pdf-frame" data="pdf/borna-najafian-resume.pdf" type="application/pdf">
+      <p>Your browser cannot display the PDF. <a href="pdf/borna-najafian-resume.pdf">Download the resume instead.</a></p>
+    </object>
+  </section>
+</main>
+
+<!-- Footer: surface background with muted text. My social links are icons only (Bootstrap Icons),
+     so each one has an aria-label. -->
+<footer class="site-footer py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    <p class="mb-0">&copy; 2026 Borna Najafian</p>
+    <ul class="social-links list-unstyled d-flex gap-2 mb-0">
+      <li><a href="mailto:borna@fakemail.com" aria-label="Email Borna Najafian"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/BorNaja" target="_blank" rel="noopener" aria-label="Borna Najafian on GitHub (opens in a new tab)"><i class="bi bi-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.youtube.com/@eyetestman1" target="_blank" rel="noopener" aria-label="Borna Najafian on YouTube (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i></a></li>
+    </ul>
+    <p class="mb-0"><a href="pdf/borna-najafian-resume.pdf" target="_blank" rel="noopener">Download résumé (PDF)</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

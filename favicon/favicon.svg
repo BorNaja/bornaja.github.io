@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- BorNaja favicon, stacked so it stays readable at small sizes -->
+  <rect width="64" height="64" rx="10" fill="#1a1b26"/>
+  <text x="32" y="29" text-anchor="middle" font-family="monospace" font-weight="700" font-size="24" fill="#bb9af7">Bor</text>
+  <text x="32" y="53" text-anchor="middle" font-family="monospace" font-weight="700" font-size="24" fill="#7aa2f7">Naja</text>
+</svg>
